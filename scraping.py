@@ -1,6 +1,4 @@
 # This file scraps info required for the desktop app
-
-from cgitb import text
 from bs4 import BeautifulSoup
 import requests
 url = "https://www.hamropatro.com/rashifal"
@@ -32,3 +30,17 @@ rasifal_class = rasifal_container.find_all("div", {"class": "desc"})[index]
 rasifal = rasifal_class.p
 
 print(rasifal.string)
+
+#incase i need  to write/read using flies
+'''
+string = str(rasifal.string).encode()
+f = open ("test.txt", "wb")
+f.write
+f.write(string)
+f.close()
+
+f = open ("test.txt", "r",encoding="utf-8")
+lines = f.readlines()
+for line in lines:
+    print (line)
+'''
