@@ -5,7 +5,6 @@ from scraping import print_rasifal
 
 def on_click(index):
   print_rasifal(index)
-  print("image clicled")
 
 def insertIamge(image_name,x_cord,y_cord,index):
   # Create a photoimage object of the image in the path
@@ -23,20 +22,16 @@ root = Tk()
 root.title("Rasifal")
 root.geometry('501x660')
 
-insertIamge("test.png",0,0,0)
-insertIamge("test.png",167,0,1)
-insertIamge("test.png",334,0,2)
+x=0 
+y=0 
+indx=0 
 
-insertIamge("test.png",0,165,3)
-insertIamge("test.png",167,165,4)
-insertIamge("test.png",334,165,5)
-
-insertIamge("test.png",0,330,6)
-insertIamge("test.png",167,330,7)
-insertIamge("test.png",334,330,8)
-
-insertIamge("test.png",0,495,9)
-insertIamge("test.png",167,495,10)
-insertIamge("test.png",334,495,11)
-
+for i in range(0,4):
+  for j in range(0,3):
+    insertIamge("test.png",x,y,indx)
+    x+= 167
+    indx+= 1
+  x=0
+  y+= 165
+   
 root.mainloop()
