@@ -25,8 +25,13 @@ def frames(index,image_name):
 
 
   rasifal_list=rasifal.split("।")
+
+  entire_sentence = rasifal.split(') ').pop(1)
+  first_sentence = entire_sentence.split('।').pop(0)
+  rasifal_lable = Label(rasifal_display_box, text = first_sentence +"।" ,font= ("Arial",13))
+  rasifal_lable.place(x=10, y=10)
   x=10
-  y=10
+  y=40
 
   for i in range (len(rasifal_list)-2):
     if i == len(rasifal_list)-2:
